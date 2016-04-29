@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 8</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<button id="quizBtn">Quiz Time!</button>
+<div id="questions"></div>
+<script>
+    var xhr = new XMLHttpRequest();
+    var url = "../ajax/data.xml";
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var resp = xhr.responseXML;
+            makeQuiz(resp);
+        }
+    };
+
+    $('#quizBtn').on('click', function () {
+        xhr.open("GET", url, true);
+        xhr.send();
+    });
+
+    function makeQuiz(xml){
+        var probs = xml.getElementsByTagName('problem');
+        for(var i = 0; i < probs.length; i++){
+            var q = probs[i].getElementsByTagName('question')[0];
+            var quest = document.createTextNode(q.innerHTML);
+            console.log(q);
+            var question = document.createElement('p');
+            question.appendChild(quest);
+            question.setAttribute('class', 'question');
+            document.getElementById('questions').appendChild(question);
+            var opts = probs[i].getElementsByTagName('answer');
+            ddocument.createEventObject()
+            for(var j = 0; j < opts.length; i++){
+                var option = document.createElement()
+            }
+        }
+    }
+</script>
+</body>
+</html>

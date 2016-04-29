@@ -1,0 +1,17 @@
+.msg {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.alert {
+    color: red;
+}
+
+form {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
