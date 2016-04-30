@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+}
+
+.form {
+    display: table;
+    text-align: center;
+}
+
+form {
+    display: table-cell;
+    text-align: center;
+}
